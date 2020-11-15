@@ -10,7 +10,9 @@ from utils.stores import stores
 logger = logging.getLogger()
 
 
-def check_store_stock():
+def check_store_stock(event, context):
+    logger.info(f'Event: {event}')
+
     headers = {
         "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/80.0"
     }
