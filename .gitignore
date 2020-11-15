@@ -1,0 +1,7 @@
+.venv
+.vscode
+.pytest_cache
+*.env*
+*.pyc
+node_modules
+.serverless

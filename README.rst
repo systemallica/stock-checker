@@ -1,0 +1,1 @@
+A script to check for PS5 availability.

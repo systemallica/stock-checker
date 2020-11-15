@@ -1,0 +1,18 @@
+service: stock-checker
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: eu-west-1
+  environment:
+    PASSWORD: ${file(./serverless.env.yml):PASSWORD, ''}
+
+functions:
+  bot:
+    handler: main.check_store_stock
+    events:
+      - schedule: rate(5 minutes)
+
+plugins:
+  - serverless-python-requirements
