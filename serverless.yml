@@ -1,5 +1,5 @@
 service: stock-checker
-frameworkVersion: '2'
+frameworkVersion: "2"
 
 provider:
   name: aws
@@ -7,6 +7,8 @@ provider:
   region: eu-west-1
   environment:
     PASSWORD: ${file(./serverless.env.yml):PASSWORD, ''}
+    SENDER_EMAIL: ${file(./serverless.env.yml):SENDER_EMAIL, ''}
+    RECEIVER_EMAIL: ${file(./serverless.env.yml):RECEIVER_EMAIL, ''}
 
 functions:
   bot:
